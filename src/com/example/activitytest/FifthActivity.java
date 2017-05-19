@@ -7,7 +7,7 @@ import android.widget.ListView;
 
 public class FifthActivity extends Activity{
 	
-	private String[] data = {"Apple","Banana","Orange","Watermalon","Pear","Grape","Pineapple","Strawberry","Cherry","Mango"};
+	private String[] data = {"Apple","Banana","Orange","Watermalon","Pear","Grape","Pineapple","Strawberry","Cherry","Mango","cup"};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
