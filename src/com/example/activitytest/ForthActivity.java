@@ -18,7 +18,7 @@ public class ForthActivity extends Activity{
 		button.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
-				Intent intent4 = new Intent(ForthActivity.this,FirstActivity.class);
+				Intent intent4 = new Intent(ForthActivity.this,FifthActivity.class);
 				startActivity(intent4);
 			}
 		});

@@ -34,6 +34,10 @@
                 <intent-filter >
                 </intent-filter>
             </activity>
+            <activity android:name="FifthActivity">
+                <intent-filter >
+                </intent-filter>
+            </activity>
     </application>
 
 </manifest>

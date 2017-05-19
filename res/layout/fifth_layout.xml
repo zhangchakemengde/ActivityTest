@@ -4,14 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-	<com.example.uicustomviews.TitleLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content">
-	</com.example.uicustomviews.TitleLayout>	
-    <Button
-        android:id="@+id/button_4"
+    <ListView
+        android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button 4"/>
-
+        android:layout_height="wrap_content">
+    </ListView>
+    
 </LinearLayout>
