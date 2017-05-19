@@ -30,6 +30,10 @@
                 <intent-filter >
                 </intent-filter>
             </activity>
+            <activity android:name=".ForthActivity">
+                <intent-filter >
+                </intent-filter>
+            </activity>
     </application>
 
 </manifest>

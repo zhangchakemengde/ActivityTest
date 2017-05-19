@@ -18,7 +18,7 @@ public class SecondActivity extends Activity{
 //		Intent intent = getIntent();
 //		String data = intent.getStringExtra("extra_data");
 //		Log.d("SecondActivity", data);
-		Button button2 = (Button)findViewById(R.id.button_2);
+		Button button2 = (Button)findViewById(R.id.login);
 		button2.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
@@ -28,13 +28,15 @@ public class SecondActivity extends Activity{
 				finish();
 			}
 		});
+		Button button3 = (Button)findViewById(R.id.loginToThird);
+		button3.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				Intent intent2 = new Intent(SecondActivity.this,ThirdActivity.class);
+				startActivity(intent2);
+				finish();
+			}
+		});
 	}
-	@Override
-	public void onBackPressed(){
-		Intent intent = new Intent();
-		intent.putExtra("data_return", "Hello diyi");
-		setResult(RESULT_OK,intent);
-		finish();
-	}
-
+	
 }
