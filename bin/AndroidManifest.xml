@@ -38,6 +38,10 @@
                 <intent-filter >
                 </intent-filter>
             </activity>
+            <activity>
+                <intent-filter>
+                </intent-filter>
+            </activity>
     </application>
 
 </manifest>
