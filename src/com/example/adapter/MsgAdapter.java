@@ -28,9 +28,25 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
 		if(convertView == null){
 			view = LayoutInflater.from(getContext()).inflate(resourceId, null);
 			viewHolder = new ViewHolder();
-			viewHolder.leftLayout = (LinearLayout) view.findViewById(R.id.left_msg);
-			viewHolder.rightLayout = (LinearLayout) view.findViewById(R.id.right_msg);
+			viewHolder.leftLayout = (LinearLayout) view.findViewById(R.id.left_layout);
+			viewHolder.rightLayout = (LinearLayout) view.findViewById(R.id.right_layout);
+			viewHolder.leftMsg = (TextView) view.findViewById(R.id.left_msg);
+			viewHolder.rightMsg = (TextView) view.findViewById(R.id.right_msg);
+			view.setTag(viewHolder);
+		}else{
+			view = convertView;
+			viewHolder = (ViewHolder) view.getTag();
 		}
+		if(msg.GetType() == Msg.TYPE_RECEIVED){
+			viewHolder.leftLayout.setVisibility(View.VISIBLE);
+			viewHolder.rightLayout.setVisibility(View.GONE);
+			viewHolder.leftMsg.setText(msg.GetContent());
+		}else if(msg.GetType() == Msg.TYPE_SENT){
+			viewHolder.rightLayout.setVisibility(View.VISIBLE);
+			viewHolder.leftLayout.setVisibility(View.GONE);
+			viewHolder.rightMsg.setText(msg.GetContent());
+		}
+		return view;
 	}
 	
 	class ViewHolder{

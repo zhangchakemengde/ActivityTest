@@ -38,7 +38,7 @@
                 <intent-filter >
                 </intent-filter>
             </activity>
-            <activity>
+            <activity android:name="SixthActivity">
                 <intent-filter>
                 </intent-filter>
             </activity>
