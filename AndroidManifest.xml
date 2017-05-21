@@ -6,6 +6,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.SYSTEM_ALTER_WINDOW"/>
 
     <application
         android:allowBackup="true"
@@ -16,14 +17,15 @@
             android:name=".FirstActivity"
             android:label="This is FirstActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                	<action android:name="com.example.activitytest.ACTION_START" />
+                    <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             </activity>
             <activity android:name=".SecondActivity">
                 <intent-filter>
-                    <action android:name="com.example.activitytest.ACTION_START" />
-                    <category android:name="android.intent.category.DEFAULT"/>
+                    <action android:name="android.intent.action.MAIN" />
+                	<category android:name="android.intent.category.LAUNCHER" />
+                    
                 </intent-filter>
             </activity>
             <activity android:name=".ThirdActivity">
@@ -34,14 +36,22 @@
                 <intent-filter >
                 </intent-filter>
             </activity>
-            <activity android:name="FifthActivity">
+            <activity android:name=".FifthActivity">
                 <intent-filter >
                 </intent-filter>
             </activity>
-            <activity android:name="SixthActivity">
+            <activity android:name=".SixthActivity">
                 <intent-filter>
                 </intent-filter>
             </activity>
+            <activity android:name=".SevenActivity">
+                <intent-filter ></intent-filter>
+            </activity>
+            <receiver android:name=".ForceOfflineReceiver">
+                <intent-filter>
+                    <action android:name="com.example.broadcastbestpratice.FORCE_OFFLINE"/>
+                </intent-filter>
+            </receiver>
     </application>
 
 </manifest>

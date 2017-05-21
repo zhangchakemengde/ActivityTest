@@ -8,8 +8,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class SecondActivity extends Activity{
+	private EditText accountEdit;
+	private EditText passwordEdit;
+	private Button login;
 	
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -18,14 +23,22 @@ public class SecondActivity extends Activity{
 //		Intent intent = getIntent();
 //		String data = intent.getStringExtra("extra_data");
 //		Log.d("SecondActivity", data);
-		Button button2 = (Button)findViewById(R.id.login);
-		button2.setOnClickListener(new OnClickListener(){
+		accountEdit = (EditText) findViewById(R.id.account);
+		passwordEdit = (EditText) findViewById(R.id.password);
+		login = (Button) findViewById(R.id.login);
+		login.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
-				Intent intent = new Intent();
-				intent.putExtra("data_return", "Hello FirstActivity");
-				setResult(RESULT_OK,intent);
-				finish();
+				String account = accountEdit.getText().toString();
+				String password = passwordEdit.getText().toString();
+				//如果账号是admin且密码是123456，就认为登陆成功
+				if(account.equals("admin") && password.equals("123456")){
+					Intent intent = new Intent(SecondActivity.this,SevenActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
+					Toast.makeText(SecondActivity.this, "account or password is invalid", Toast.LENGTH_SHORT).show();
+				}
 			}
 		});
 		Button button3 = (Button)findViewById(R.id.loginToThird);
