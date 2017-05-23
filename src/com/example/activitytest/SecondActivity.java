@@ -50,6 +50,15 @@ public class SecondActivity extends Activity{
 				finish();
 			}
 		});
+		Button button4 = (Button)findViewById(R.id.button_5);
+		button4.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				Intent intent3 = new Intent(SecondActivity.this,EightActivity.class);
+				startActivity(intent3);
+				finish();
+			}
+		});
 	}
 	
 }

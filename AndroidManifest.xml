@@ -52,6 +52,7 @@
                     <action android:name="com.example.broadcastbestpratice.FORCE_OFFLINE"/>
                 </intent-filter>
             </receiver>
+            <activity android:name=".EightActivity"></activity>
     </application>
 
 </manifest>

@@ -35,4 +35,11 @@
 	        android:layout_span="2"
 	        android:text="Go To ThirdActivity"/>
 	</TableRow>
+	<TableRow >
+	    <Button 
+	        android:id="@+id/button_5"
+	        android:layout_height="wrap_content"
+	        android:layout_span="2"
+	        android:text="Go to EighthActivity"/>
+	</TableRow>
 </TableLayout>
