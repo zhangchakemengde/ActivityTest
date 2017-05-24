@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:orientation = "vertical"
+    android:layout_width = "fill_parent"
+    android:layout_height ="fill_parent">
+    
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1">
+       <!--android:stretchColumns="1"是设置 TableLayout所有行的第二列为扩展列。  也就是说如果每行都有三列的话，剩余的空间由第二列补齐 -->   
+
+			
+        <TableRow >
+            <TextView
+                 android:text="员 工 号 ："
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textColor="#0000ff"
+                />
+            
+            <EditText 
+                android:text=""
+                android:id="@+id/userNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+                 android:text="登录密码 ："
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textColor="#0000ff"
+                />
+            
+            <EditText 
+                android:text=""
+                android:id="@+id/pwd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:password="true" />
+        </TableRow>
+        
+        <TableRow android:gravity="right">
+            <Button 
+                android:text="取消"
+                android:id="@+id/cancleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            
+              <Button 
+                android:text="登录"
+                android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+              
+        </TableRow>
+        
+    </TableLayout>
+    
+</LinearLayout>

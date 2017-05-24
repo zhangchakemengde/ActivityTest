@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+import com.example.Database.MyDatabaseHelper;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -26,6 +28,7 @@ public class EightActivity extends Activity{
 	private EditText edit;
 	private Button saveData;
 	private Button restoreData;
+	private MyDatabaseHelper dbHelper;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -34,6 +37,14 @@ public class EightActivity extends Activity{
 		edit = (EditText) findViewById(R.id.edit_1);
 		saveData = (Button) findViewById(R.id.button_6);
 		restoreData = (Button) findViewById(R.id.button_7);
+		dbHelper = new MyDatabaseHelper(this,"BookStore.db",null,1);
+		Button createDatabase = (Button) findViewById(R.id.button_8);
+		createDatabase.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				dbHelper.getWritableDatabase();
+			}
+		});
 		saveData.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v){
