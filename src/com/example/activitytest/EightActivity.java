@@ -12,8 +12,10 @@ import java.io.OutputStreamWriter;
 import com.example.Database.MyDatabaseHelper;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -37,8 +39,38 @@ public class EightActivity extends Activity{
 		edit = (EditText) findViewById(R.id.edit_1);
 		saveData = (Button) findViewById(R.id.button_6);
 		restoreData = (Button) findViewById(R.id.button_7);
-		dbHelper = new MyDatabaseHelper(this,"BookStore.db",null,1);
+		dbHelper = new MyDatabaseHelper(this,"BookStore.db",null,3);
 		Button createDatabase = (Button) findViewById(R.id.button_8);
+		Button addData = (Button) findViewById(R.id.button_9);
+		Button updateData = (Button) findViewById(R.id.button_10);
+		updateData.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				SQLiteDatabase db = dbHelper.getWritableDatabase();
+				ContentValues values = new ContentValues();
+				values.put("price", 10.99);
+				db.update("Book", values, "name = ?", new String[] { "The DaVinci Code" });
+			}
+		});
+		addData.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				SQLiteDatabase db = dbHelper.getWritableDatabase();
+				ContentValues values = new ContentValues();
+				values.put("name", "The DaVinci Code");
+				values.put("author", "Dan Brown");
+				values.put("pages", 454);
+				values.put("price", 16.96);
+				db.insert("Book", null, values);
+				values.clear();
+				values.put("name", "The Lost Symbol");
+				values.put("author", "Dan Brown");
+				values.put("pages", 510);
+				values.put("price", 19.95);
+				db.insert("Book", null, values); // 插入第二条数据
+				
+			}
+		});
 		createDatabase.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
