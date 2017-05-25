@@ -7,6 +7,7 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -59,6 +60,8 @@
             
             <activity android:name=".Login"></activity>
             <activity android:name="NinthActivity"></activity>
+            <activity android:name="TenthActivity"></activity>
+            <activity android:name="ElevenActivity"></activity>
     </application>
 
 </manifest>

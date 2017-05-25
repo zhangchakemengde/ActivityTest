@@ -21,6 +21,7 @@ public class NinthActivity extends Activity{
 	public static final int TAKE_PHOTO = 1;
 	public static final int CROP_PHOTO = 2;
 	private Button takePhoto;
+	private Button chooseFromAlbem;
 	private ImageView picture;
 	private Uri imageUri;
 	@Override
@@ -47,6 +48,30 @@ public class NinthActivity extends Activity{
 				Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
 				intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
 				startActivityForResult(intent,TAKE_PHOTO);//启动相机程序
+			}
+		});
+		chooseFromAlbem = (Button) findViewById(R.id.choose_from_album);
+		chooseFromAlbem.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				//创建File对象，用于存储选择的图片
+				File outputImage = new File(Environment.getExternalStorageDirectory(),"output_image.jpg");
+				try {
+					if(outputImage.exists()){
+						outputImage.delete();
+					}
+					outputImage.createNewFile();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				imageUri = Uri.fromFile(outputImage);
+				Intent intent = new Intent("android.intent.action.GET_CONTENT");
+				intent.setType("image/*");
+				intent.putExtra("crop", true);
+				intent.putExtra("scale", true);
+				intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+				startActivityForResult(intent,CROP_PHOTO);
 			}
 		});
 	}

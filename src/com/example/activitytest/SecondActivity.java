@@ -34,6 +34,8 @@ public class SecondActivity extends Activity{
 	private SharedPreferences.Editor editor;
 	String account;
 	String password;
+	private Button Goto_TenthActivity;
+	private Button Goto_ElevenActivity;
 	Handler hmessage=new Handler()
 	{
 		@Override
@@ -145,6 +147,24 @@ public class SecondActivity extends Activity{
 			public void onClick(View v){
 				Intent intent3 = new Intent(SecondActivity.this,EightActivity.class);
 				startActivity(intent3);
+				finish();
+			}
+		});
+		Goto_TenthActivity = (Button) findViewById(R.id.button_12);
+		Goto_TenthActivity.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				Intent intent = new Intent(SecondActivity.this,TenthActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		});
+		Goto_ElevenActivity = (Button) findViewById(R.id.button_13);
+		Goto_ElevenActivity.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				Intent intent = new Intent(SecondActivity.this,ElevenActivity.class);
+				startActivity(intent);
 				finish();
 			}
 		});

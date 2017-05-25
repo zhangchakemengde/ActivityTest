@@ -14,6 +14,7 @@ import com.example.Database.MyDatabaseHelper;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -43,6 +44,15 @@ public class EightActivity extends Activity{
 		Button createDatabase = (Button) findViewById(R.id.button_8);
 		Button addData = (Button) findViewById(R.id.button_9);
 		Button updateData = (Button) findViewById(R.id.button_10);
+		Button GotoNine = (Button) findViewById(R.id.button_11);
+		GotoNine.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				Intent intent = new Intent(EightActivity.this,NinthActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		});
 		updateData.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){

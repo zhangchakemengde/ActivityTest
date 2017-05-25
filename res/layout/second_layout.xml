@@ -50,4 +50,18 @@
 	        android:layout_span="2"
 	        android:text="Go to EighthActivity"/>
 	</TableRow>
+	<TableRow >
+	    <Button 
+	        android:id="@+id/button_12"
+	        android:layout_height="wrap_content"
+	        android:layout_span="2"
+	        android:text=" Go to TenthActivity Play Audio"/>
+	</TableRow>
+	<TableRow >
+	    <Button 
+	        android:id="@+id/button_13"
+	        android:layout_height="wrap_content"
+	        android:layout_span="2"
+	        android:text="Go to ElevenActivity Play Vedid"/>
+	</TableRow>
 </TableLayout>
