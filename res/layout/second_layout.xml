@@ -62,6 +62,13 @@
 	        android:id="@+id/button_13"
 	        android:layout_height="wrap_content"
 	        android:layout_span="2"
-	        android:text="Go to ElevenActivity Play Vedid"/>
+	        android:text="Go to TwelveActivity Play Vedid"/>
+	</TableRow>
+	<TableRow >
+	    <Button 
+	        android:id="@+id/button_14"
+	        android:layout_height="wrap_content"
+	        android:layout_span="2"
+	        android:text="Go to ThirdActivity"/>
 	</TableRow>
 </TableLayout>

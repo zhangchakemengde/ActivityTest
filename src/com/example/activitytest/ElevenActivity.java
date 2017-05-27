@@ -3,6 +3,7 @@ package com.example.activitytest;
 import java.io.File;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -15,6 +16,7 @@ public class ElevenActivity extends Activity implements OnClickListener{
 	private Button play;
 	private Button pause;
 	private Button replay;
+	private Button gotoTwelveActivity;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -27,6 +29,7 @@ public class ElevenActivity extends Activity implements OnClickListener{
 		play.setOnClickListener(this);
 		pause.setOnClickListener(this);
 		replay.setOnClickListener(this);
+		gotoTwelveActivity.setOnClickListener(this);
 		initVideoPath();
 	}
 	private void initVideoPath(){
@@ -51,6 +54,11 @@ public class ElevenActivity extends Activity implements OnClickListener{
 			if(videoView.isPlaying()){
 				videoView.resume();
 			}
+			break;
+		case R.id.Goto_TwelveActivity:
+			Intent intent = new Intent(ElevenActivity.this,TwelveActivity.class);
+			startActivity(intent);
+			finish();
 			break;
 		}
 	}

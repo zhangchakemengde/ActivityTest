@@ -30,6 +30,10 @@
             android:layout_weight="1"
             android:text="Replay"/>
     </LinearLayout>
+    <Button android:id="@+id/Goto_TwelveActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Goto TwelveActivity"/>
 
 
 </LinearLayout>

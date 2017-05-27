@@ -36,6 +36,7 @@ public class SecondActivity extends Activity{
 	String password;
 	private Button Goto_TenthActivity;
 	private Button Goto_ElevenActivity;
+	private Button Goto_ThirtyActivity;
 	Handler hmessage=new Handler()
 	{
 		@Override
@@ -163,7 +164,16 @@ public class SecondActivity extends Activity{
 		Goto_ElevenActivity.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v){
-				Intent intent = new Intent(SecondActivity.this,ElevenActivity.class);
+				Intent intent = new Intent(SecondActivity.this,TwelveActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		});
+		Goto_ThirtyActivity = (Button) findViewById(R.id.button_14);
+		Goto_ThirtyActivity.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v){
+				Intent intent = new Intent(SecondActivity.this,ThirtyActivity.class);
 				startActivity(intent);
 				finish();
 			}
@@ -179,4 +189,5 @@ public class SecondActivity extends Activity{
 		AlertDialog alert = builder.create();
 		alert.show();
 	}
+	
 }
